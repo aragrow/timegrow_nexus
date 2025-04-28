@@ -117,17 +117,18 @@ function LoginForm() {
   // The form is only rendered if the user is null and not currently loading (handled by the initial check and useEffect).
   return (
     <div className="login-form-container">
-      <h2>Login to Nexus</h2> {/* Heading for the form */}
-
-      {/* Display loading or error messages conditionally */}
+      <h2>Login to Nexus for TimeGrow</h2> {/* Heading for the form */}
+        {/* Display loading or error messages conditionally */}
       {loading && <p>Logging in...</p>}
       {error && <p style={{ color: 'red' }}>Error: {error}</p>}
 
        {/* The actual HTML form element */}
        <form onSubmit={handleSubmit} className="login-form">
          <div>
+          <p>Introducing Nexus for TimeGrow, a time and expense tracking solution from Aragrow, LLC, that puts users in control. This prototype, starting in WordPress with an eye on broader compatibility, aims to revolutionize data interaction by enabling robust CRUD (Create, Read, Update, Delete) and insightful reporting, all generated effortlessly through the power of natural language commands.</p>
+ 
            {/* Label and input field for the username or email */}
-           <label htmlFor="username">Username or Email:</label>
+           <label htmlFor="username">Username:</label>
            <input
              type="text"
              id="username" // Unique ID for the label's 'htmlFor' attribute
@@ -154,6 +155,7 @@ function LoginForm() {
            {loading ? 'Logging In...' : 'Login'} {/* Button text changes based on the 'loading' state */}
          </button>
        </form>
+       <h3>By: Aragrow, LLC</h3> {/* Heading for the form */}
     </div>
   );
 }

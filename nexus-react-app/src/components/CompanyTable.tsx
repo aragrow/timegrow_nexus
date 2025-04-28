@@ -1,4 +1,4 @@
-**
+/**
  * Company Table Component.
  *
  * This component fetches and displays a list of companies from the
