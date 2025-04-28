@@ -21,7 +21,7 @@ interface UseApi {
 }
 
 // --- IMPORTANT: Replace with your actual local WordPress site URL ---
-const WP_API_URL = 'YOUR_WORDPRESS_SITE_URL';
+const WP_API_URL = 'http://localhost:10003';
 // ------------------------------------------------------------
 
 /**

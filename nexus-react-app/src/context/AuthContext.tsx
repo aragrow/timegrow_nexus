@@ -50,7 +50,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [loadingUser, setLoadingUser] = useState(true); // Start as true because we need to check for token/user
 
   // --- IMPORTANT: Replace with your actual local WordPress site URL ---
-  const WP_API_URL = 'YOUR_WORDPRESS_SITE_URL';
+  const WP_API_URL = 'http://localhost:10003';
   // ------------------------------------------------------------
 
   // Memoized function to fetch user data using the current token.
