@@ -125,7 +125,8 @@ function LoginForm() {
        {/* The actual HTML form element */}
        <form onSubmit={handleSubmit} className="login-form">
          <div>
-          <p>Introducing Nexus for TimeGrow, a time and expense tracking solution from Aragrow, LLC, that puts users in control. This prototype, starting in WordPress with an eye on broader compatibility, aims to revolutionize data interaction by enabling robust CRUD (Create, Read, Update, Delete) and insightful reporting, all generated effortlessly through the power of natural language commands.</p>
+          
+          <p><img src="/src/assets/logo.png" alt="logo" className="logo"/>Introducing Nexus for TimeGrow, a time and expense tracking solution from Aragrow, LLC, that puts users in control. This prototype, starting in WordPress with an eye on broader compatibility, aims to revolutionize data interaction by enabling robust CRUD (Create, Read, Update, Delete) and insightful reporting, all generated effortlessly through the power of natural language commands.</p>
  
            {/* Label and input field for the username or email */}
            <label htmlFor="username">Username:</label>

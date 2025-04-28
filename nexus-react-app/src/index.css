@@ -280,6 +280,13 @@ code {
   float: right
 }
 
+.login-form .logo{
+    width: 50px; 
+    margin-right: 5px; 
+    margin-bottom: 2px;
+    float: left;          /* Float the image to the left */
+}
+
 .login-form button:hover:not(:disabled) {
   background-color: #005177;
   color: white;
