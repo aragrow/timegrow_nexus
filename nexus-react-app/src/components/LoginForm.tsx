@@ -14,7 +14,7 @@ import { useNavigate } from 'react-router-dom'; // Import useNavigate for progra
 function LoginForm() {
   // State hooks for managing the form inputs
   const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [application_password, setPassword] = useState('');
   // State hook for displaying any error messages returned from the login attempt
   const [error, setError] = useState<string | null>(null);
   // State hook for showing a loading indicator while the login request is in progress
@@ -64,7 +64,7 @@ function LoginForm() {
     setLoading(true); // Set the loading state to true to show indicator and disable form
 
     // The full URL for the JWT authentication endpoint provided by the plugin
-    const loginUrl = `${WP_API_URL}/wp-json/jwt-auth/v1/token`;
+    const loginUrl = `${WP_API_URL}/wp-json/jwt-auth/v1/auth`;
 
     try {
       // Use the browser's built-in fetch API to send a POST request
@@ -74,7 +74,7 @@ function LoginForm() {
           'Content-Type': 'application/json', // Indicate that the request body is in JSON format
         },
         // Convert the JavaScript object containing credentials into a JSON string for the request body
-        body: JSON.stringify({ username, password }),
+        body: JSON.stringify({ username, application_password }),
       });
 
       // Check if the HTTP status code of the response indicates success (status code 200-299)
@@ -86,6 +86,7 @@ function LoginForm() {
         throw new Error(errorData.message || 'Login failed. Please check your credentials.');
       }
 
+  
       // If the response is OK, parse the JSON body to extract the token
       const data = await response.json();
       const receivedToken = data.token; // The JWT token returned by the successful API call
@@ -94,6 +95,9 @@ function LoginForm() {
       // This function will store the token and update the application's authentication state,
       // which will in turn trigger the redirection to the dashboard via the useEffect hook.
       login(receivedToken);
+      if (!receivedToken) {
+        throw new Error('Invalid token.');
+      }
 
       // Clear the form fields after a successful login attempt
       setUsername('');
@@ -144,12 +148,13 @@ function LoginForm() {
            <label htmlFor="password">Password:</label>
            <input
              type="password"
-             id="password" // Unique ID for the label's 'htmlFor' attribute
-             value={password} // Input value is controlled by the 'password' state
+             id="application_password" // Unique ID for the label's 'htmlFor' attribute
+             value={application_password} // Input value is controlled by the 'password' state
              onChange={(e) => setPassword(e.target.value)} // Update 'password' state when input changes
              required // HTML5 validation: field is required
              disabled={loading} // Disable the input fields while loading
            />
+           OGNN gfSi 4mBs 6fvW MveF mvrB ...   wuQP1#Y7MwNfbEdAHJvmo123
          </div>
          {/* Submit button */}
          <button type="submit" disabled={loading}>
